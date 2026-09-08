@@ -13,7 +13,7 @@ type PhoneFrameProps = {
  */
 export function PhoneFrame({ title, poster, videoSrc }: PhoneFrameProps) {
   return (
-    <div className="relative mx-auto aspect-9/19-5 w-full max-w-55 rounded-[1.75rem] border border-ink/80 bg-ink p-1.5 shadow-lift">
+    <div className="relative mx-auto aspect-[9/19.5] w-full max-w-55 rounded-[1.75rem] border border-ink/80 bg-ink p-1.5 shadow-lift">
       <div className="relative h-full w-full overflow-hidden rounded-[1.35rem] bg-ivory-deep">
         {videoSrc ? (
           <video
