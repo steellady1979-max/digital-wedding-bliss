@@ -4,7 +4,7 @@ type PhoneFrameProps = {
   /** Poster image rendered inside the frame when no video is set. */
   poster: string;
   /** Optional video URL — when set, replaces the poster inside the same frame. */
-  videoSrc?: string;
+  videoSrc?: string | undefined;
 };
 
 /**
