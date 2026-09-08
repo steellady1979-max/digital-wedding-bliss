@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { designs, type InvitationDesign } from "@/data/festa";
 
 import { DemoModal } from "./DemoModal";
+import { PhoneFrame } from "./PhoneFrame";
 import { FestaButton, Reveal, Section, SectionHeading } from "./primitives";
 
 export function Catalogue() {
@@ -52,16 +53,13 @@ function DesignCard({
 }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-sm border border-border/70 bg-card shadow-card transition-all duration-500 hover:-translate-y-1 hover:border-gold/45 hover:shadow-lift">
-      <div className="relative overflow-hidden">
-        <img
-          src={design.image}
-          alt={design.alt}
-          width={1008}
-          height={1264}
-          loading="lazy"
-          className="aspect-4/5 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+      <div className="relative px-8 pt-10 pb-2">
+        <PhoneFrame
+          title={design.name}
+          poster={design.image}
+          videoSrc={design.videoSrc}
         />
-        <span className="absolute top-4 left-4 rounded-full bg-ivory/92 px-3 py-1 text-[0.625rem] tracking-[0.16em] text-burgundy uppercase backdrop-blur-sm">
+        <span className="absolute top-5 left-5 rounded-full bg-ivory/92 px-3 py-1 text-[0.625rem] tracking-[0.16em] text-burgundy uppercase backdrop-blur-sm">
           {design.category}
         </span>
       </div>

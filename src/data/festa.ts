@@ -19,6 +19,8 @@ export type InvitationDesign = {
   description: string;
   image: string;
   alt: string;
+  /** Optional video shown inside the phone frame instead of the image. */
+  videoSrc?: string;
   /** TODO: replace with the real published invitation URL. */
   demoUrl: string | null;
 };
