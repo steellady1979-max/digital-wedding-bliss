@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Catalogue } from "@/components/festa/Catalogue";
+import { Faq } from "@/components/festa/Faq";
+import { Features } from "@/components/festa/Features";
+import { FinalCta } from "@/components/festa/FinalCta";
+import { Footer } from "@/components/festa/Footer";
+import { Header } from "@/components/festa/Header";
+import { Hero } from "@/components/festa/Hero";
+import { HowItWorks } from "@/components/festa/HowItWorks";
+import { Testimonials } from "@/components/festa/Testimonials";
+
+const title = "Festa.ge — დახვეწილი ციფრული საქორწილო მოსაწვევები";
+const description =
+  "შექმენით ელეგანტური ციფრული საქორწილო მოსაწვევი: თარიღი, ლოკაცია, განრიგი და ფოტოები ერთ ლამაზ ბმულში.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Catalogue />
+        <HowItWorks />
+        <Features />
+        <Testimonials />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }
