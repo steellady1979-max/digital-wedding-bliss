@@ -27,13 +27,24 @@ export function DemoModal({
         {design ? (
           <>
             <div className="relative">
-              <img
-                src={design.image}
-                alt={design.alt}
-                width={1008}
-                height={1264}
-                className="h-56 w-full object-cover"
-              />
+              {design.videoSrc ? (
+                <video
+                  src={design.videoSrc}
+                  controls
+                  playsInline
+                  muted
+                  preload="metadata"
+                  className="h-56 w-full bg-ivory-deep object-contain"
+                />
+              ) : (
+                <img
+                  src={design.image}
+                  alt={design.alt}
+                  width={1008}
+                  height={1264}
+                  className="h-56 w-full object-cover"
+                />
+              )}
               <div className="absolute inset-0 bg-burgundy-deep/45" aria-hidden="true" />
               <p className="eyebrow absolute bottom-4 left-6 text-gold">
                 {design.category}
