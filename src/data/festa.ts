@@ -7,6 +7,7 @@
  */
 
 import burgundyImg from "@/assets/design-burgundy.jpg";
+import burgundyVideo from "@/assets/burgundy-demo.mp4.asset.json";
 import ivoryImg from "@/assets/design-ivory.jpg";
 import botanicalImg from "@/assets/design-botanical.jpg";
 import minimalImg from "@/assets/design-minimal.jpg";
@@ -34,6 +35,7 @@ export const designs: InvitationDesign[] = [
       "მუქი ბორდო და ოქროს დეტალები — თბილი, რომანტიკული განწყობა საღამოს ზეიმისთვის.",
     image: burgundyImg,
     alt: "ბორდო ფერის საქორწილო მოსაწვევი ოქროსფერი ბოტანიკური ჩარჩოთი",
+    videoSrc: burgundyVideo.url,
     demoUrl: null,
   },
   {
