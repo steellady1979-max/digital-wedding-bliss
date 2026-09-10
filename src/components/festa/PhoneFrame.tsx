@@ -17,11 +17,11 @@ export function PhoneFrame({ title, poster, videoSrc }: PhoneFrameProps) {
       <div className="relative h-full w-full overflow-hidden rounded-[1.35rem] bg-ivory-deep">
         {videoSrc ? (
           <video
-            src={videoSrc}
-            poster={poster}
+            src={`${videoSrc}#t=0.1`}
             controls
             playsInline
-            preload="none"
+            muted
+            preload="metadata"
             className="h-full w-full object-contain"
             aria-label={title}
           />
