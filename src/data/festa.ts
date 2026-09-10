@@ -8,7 +8,7 @@
 
 import burgundyImg from "@/assets/design-burgundy.jpg";
 import burgundyVideo from "@/assets/burgundy-demo.mp4.asset.json";
-import ivoryImg from "@/assets/design-ivory.jpg";
+import timelessIvoryVideo from "@/assets/timeless-ivory-demo.mp4.asset.json";
 import botanicalImg from "@/assets/design-botanical.jpg";
 import minimalImg from "@/assets/design-minimal.jpg";
 import midnightImg from "@/assets/design-midnight.jpg";
@@ -44,8 +44,9 @@ export const designs: InvitationDesign[] = [
     category: "დროისმიღმა",
     description:
       "სპილოსძვლის ქაღალდი და შამპანურის ფერის აქცენტები დახვეწილი სიმსუბუქისთვის.",
-    image: ivoryImg,
+    image: "",
     alt: "სპილოსძვლის ფერის საქორწილო მოსაწვევების ნაკრები აბრეშუმის ლენტით",
+    videoSrc: timelessIvoryVideo.url,
     demoUrl: null,
   },
   {
