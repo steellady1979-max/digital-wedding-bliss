@@ -21,7 +21,7 @@ export function PhoneFrame({ title, poster, videoSrc }: PhoneFrameProps) {
             poster={poster}
             controls
             playsInline
-            preload="metadata"
+            preload="none"
             className="h-full w-full object-contain"
             aria-label={title}
           />
