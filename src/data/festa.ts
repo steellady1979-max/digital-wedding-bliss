@@ -7,6 +7,7 @@
  */
 
 import burgundyImg from "@/assets/design-burgundy.jpg";
+import burgundyVideo from "@/assets/burgundy-demo.mp4.asset.json";
 import ivoryImg from "@/assets/design-ivory.jpg";
 import botanicalImg from "@/assets/design-botanical.jpg";
 import minimalImg from "@/assets/design-minimal.jpg";
