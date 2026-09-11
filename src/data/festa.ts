@@ -2,13 +2,11 @@
  * Festa.ge content + demo data.
  *
  * DESIGN PHASE ONLY: invitation demos, testimonials and FAQ answers below are
- * temporary placeholders. Replace `demoUrl` with the real invitation link and
- * swap in the final imagery/copy before launch — no other file needs to change.
+ * temporary placeholders. Swap in the final imagery/copy before launch — no
+ * other file needs to change.
  */
 
 import burgundyImg from "@/assets/design-burgundy.jpg";
-import burgundyVideo from "@/assets/burgundy-demo.mp4.asset.json";
-import timelessIvoryVideo from "@/assets/timeless-ivory-demo.mp4.asset.json";
 import botanicalImg from "@/assets/design-botanical.jpg";
 import minimalImg from "@/assets/design-minimal.jpg";
 import midnightImg from "@/assets/design-midnight.jpg";
@@ -20,9 +18,7 @@ export type InvitationDesign = {
   description: string;
   image: string;
   alt: string;
-  /** Optional video shown inside the phone frame instead of the image. */
-  videoSrc?: string;
-  /** TODO: replace with the real published invitation URL. */
+  /** Live invitation URL loaded inside the demo modal. */
   demoUrl: string | null;
 };
 
@@ -35,8 +31,7 @@ export const designs: InvitationDesign[] = [
       "მუქი ბორდო და ოქროს დეტალები — თბილი, რომანტიკული განწყობა საღამოს ზეიმისთვის.",
     image: burgundyImg,
     alt: "ბორდო ფერის საქორწილო მოსაწვევი ოქროსფერი ბოტანიკური ჩარჩოთი",
-    videoSrc: burgundyVideo.url,
-    demoUrl: null,
+    demoUrl: "https://giga-nini.vercel.app",
   },
   {
     id: "timeless-ivory",
@@ -46,8 +41,7 @@ export const designs: InvitationDesign[] = [
       "სპილოსძვლის ქაღალდი და შამპანურის ფერის აქცენტები დახვეწილი სიმსუბუქისთვის.",
     image: "",
     alt: "სპილოსძვლის ფერის საქორწილო მოსაწვევების ნაკრები აბრეშუმის ლენტით",
-    videoSrc: timelessIvoryVideo.url,
-    demoUrl: null,
+    demoUrl: "https://nini-mate.vercel.app",
   },
   {
     id: "botanical-love",
@@ -57,7 +51,7 @@ export const designs: InvitationDesign[] = [
       "აკვარელის ყვავილები და მწვანე ტოტები — ნაზი და ბუნებრივი დღის ზეიმისთვის.",
     image: botanicalImg,
     alt: "ბოტანიკური საქორწილო მოსაწვევი აკვარელის ყვავილებითა და ევკალიპტით",
-    demoUrl: null,
+    demoUrl: "https://lisa-giorgi.vercel.app",
   },
   {
     id: "modern-minimal",
@@ -67,7 +61,7 @@ export const designs: InvitationDesign[] = [
       "სუფთა ტიპოგრაფია და ბევრი თეთრი სივრცე — თანამედროვე, რედაქციული ხასიათი.",
     image: minimalImg,
     alt: "მინიმალისტური თეთრი საქორწილო მოსაწვევი წვრილი ოქროს ჩარჩოთი",
-    demoUrl: null,
+    demoUrl: "https://mariami-ioseb.vercel.app",
   },
   {
     id: "midnight-elegance",
@@ -77,7 +71,27 @@ export const designs: InvitationDesign[] = [
       "მუქი ღამის ტონები და ოქროს ციალი — ლუქსუსური საღამოს ღონისძიებისთვის.",
     image: midnightImg,
     alt: "მუქი ღამის ფერის საქორწილო მოსაწვევი ოქროსფერი დეტალებით სანთლის შუქზე",
-    demoUrl: null,
+    demoUrl: "https://mariami-aleksandre.vercel.app",
+  },
+  {
+    id: "ana-cotne",
+    name: "ანა & ცოტნე",
+    category: "რეალური დემო",
+    description:
+      "ცოცხალი საქორწილო მოსაწვევის დემო — შეგიძლია პირდაპირ გამოსცადო და ჩამოსქროლო.",
+    image: "",
+    alt: "ანას და ცოტნეს ციფრული მოსაწვევის დემო",
+    demoUrl: "https://ana-cotne.vercel.app/",
+  },
+  {
+    id: "nini-aleko",
+    name: "ნინი & ალეკო",
+    category: "რეალური დემო",
+    description:
+      "ცოცხალი საქორწილო მოსაწვევის დემო — შეგიძლია პირდაპირ გამოსცადო და ჩამოსქროლო.",
+    image: "",
+    alt: "ნინის და ალეკოს ციფრული მოსაწვევის დემო",
+    demoUrl: "https://nini-aleko.vercel.app",
   },
 ];
 
@@ -99,7 +113,7 @@ export const steps = [
   },
   {
     title: "მიიღეთ თქვენი ვებსაიტი",
-    text: "მიიღეთ გასაზიარებლად მზად მყოფი პერსონალური ბმული.",
+    text: "მიიღებთ გასაზიარებლად მზად მყოფი პერსონალური ბმული.",
   },
 ];
 
