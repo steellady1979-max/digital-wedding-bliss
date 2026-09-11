@@ -54,11 +54,7 @@ function DesignCard({
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-sm border border-border/70 bg-card shadow-card transition-all duration-500 hover:-translate-y-1 hover:border-gold/45 hover:shadow-lift">
       <div className="relative px-8 pt-10 pb-2">
-        <PhoneFrame
-          title={design.name}
-          poster={design.image}
-          videoSrc={design.videoSrc}
-        />
+        <PhoneFrame title={design.name} poster={design.image} />
         <span className="absolute top-5 left-5 rounded-full bg-ivory/92 px-3 py-1 text-[0.625rem] tracking-[0.16em] text-burgundy uppercase backdrop-blur-sm">
           {design.category}
         </span>
