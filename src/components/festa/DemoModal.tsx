@@ -8,11 +8,13 @@ import {
 } from "@/components/ui/dialog";
 
 import { FestaButton } from "./primitives";
+import { PhoneFrame } from "./PhoneFrame";
 
 /**
- * Placeholder demo preview.
- * When real invitations exist, render an iframe / link for `design.demoUrl`
- * instead of the placeholder panel below.
+ * Live demo preview.
+ * Loads `design.demoUrl` inside a phone-frame iframe so visitors can scroll and
+ * interact with the real invitation. Falls back to opening the link in a new
+ * tab if the site blocks embedding.
  */
 export function DemoModal({
   design,
@@ -23,35 +25,12 @@ export function DemoModal({
 }) {
   return (
     <Dialog open={Boolean(design)} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-w-lg gap-0 rounded-sm border-border bg-ivory p-0">
+      <DialogContent className="flex max-h-[90vh] max-w-lg flex-col gap-0 rounded-sm border-border bg-ivory p-0">
         {design ? (
           <>
-            <div className="relative">
-              {design.videoSrc ? (
-                <video
-                  src={design.videoSrc}
-                  controls
-                  playsInline
-                  muted
-                  preload="metadata"
-                  className="h-56 w-full bg-ivory-deep object-contain"
-                />
-              ) : (
-                <img
-                  src={design.image}
-                  alt={design.alt}
-                  width={1008}
-                  height={1264}
-                  className="h-56 w-full object-cover"
-                />
-              )}
-              <div className="absolute inset-0 bg-burgundy-deep/45" aria-hidden="true" />
-              <p className="eyebrow absolute bottom-4 left-6 text-gold">
-                {design.category}
-              </p>
-            </div>
-            <div className="p-6 sm:p-7">
+            <div className="flex-1 overflow-y-auto p-6 sm:p-7">
               <DialogHeader className="space-y-3 text-left">
+                <p className="eyebrow text-gold">{design.category}</p>
                 <DialogTitle className="font-serif text-2xl text-burgundy-deep">
                   {design.name}
                 </DialogTitle>
@@ -60,15 +39,29 @@ export function DemoModal({
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="mt-6 rounded-sm border border-dashed border-gold/50 bg-ivory-deep/60 px-5 py-6 text-center">
-                <p className="eyebrow text-burgundy-soft">დემო</p>
-                <p className="mt-2.5 text-[0.875rem] leading-relaxed text-ink/70">
-                  სრული ინტერაქტიული დემო მალე დაემატება — აქ გაიხსნება ამ დიზაინის
-                  ცოცხალი მოსაწვევი.
-                </p>
+              <div className="mt-6 flex justify-center">
+                <PhoneFrame
+                  title={design.name}
+                  poster={design.image}
+                  demoUrl={design.demoUrl ?? undefined}
+                  className="max-w-60 sm:max-w-64"
+                />
               </div>
 
-              <FestaButton onClick={onClose} className="mt-6 w-full">
+              {design.demoUrl && (
+                <a
+                  href={design.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 block text-center text-sm text-burgundy underline underline-offset-4"
+                >
+                  დემოს ახალ ჩანართში გახსნა
+                </a>
+              )}
+            </div>
+
+            <div className="border-t border-border/70 p-4 sm:p-6">
+              <FestaButton onClick={onClose} className="w-full">
                 დახურვა
               </FestaButton>
             </div>
