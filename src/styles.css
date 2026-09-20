@@ -55,16 +55,17 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 1rem;
 
-  --burgundy: oklch(0.3713 0.116 6.49);
-  --burgundy-deep: oklch(0.2753 0.0851 8.77);
-  --burgundy-soft: oklch(0.4772 0.1008 2.29);
-  --ivory: oklch(0.9748 0.0079 73.74);
-  --ivory-deep: oklch(0.9408 0.0148 70.88);
-  --blush: oklch(0.8885 0.0211 17.56);
-  --gold: oklch(0.7279 0.0989 82.08);
-  --ink: oklch(0.2578 0.0177 0.29);
+  /* Warm, contemporary neutrals: soft charcoal + sand + champagne. */
+  --burgundy: oklch(0.3729 0.0141 67.56);
+  --burgundy-deep: oklch(0.2652 0.0106 67.56);
+  --burgundy-soft: oklch(0.5361 0.0195 70);
+  --ivory: oklch(0.9812 0.0045 84);
+  --ivory-deep: oklch(0.9503 0.0085 82);
+  --blush: oklch(0.9 0.0206 76);
+  --gold: oklch(0.7829 0.0616 79.5);
+  --ink: oklch(0.2451 0.0083 67.56);
 
   --background: var(--ivory);
   --foreground: var(--ink);

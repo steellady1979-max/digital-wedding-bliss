@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 
 import heroImg from "@/assets/hero.jpg";
-import cardImg from "@/assets/design-burgundy.jpg";
+import cardImg from "@/assets/design-ivory.jpg";
 
 import { FestaLinkButton } from "./primitives";
 
@@ -123,7 +123,7 @@ function PhoneMockup() {
                 ),
               )}
             </div>
-            <div className="mt-4 rounded-sm bg-burgundy px-4 py-2.5 text-center text-[0.6875rem] tracking-[0.14em] text-ivory uppercase">
+            <div className="mt-4 rounded-full bg-burgundy px-4 py-2.5 text-center text-[0.6875rem] tracking-[0.12em] text-ivory">
               დასწრების დადასტურება
             </div>
           </div>

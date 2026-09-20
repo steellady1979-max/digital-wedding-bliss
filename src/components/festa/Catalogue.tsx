@@ -1,80 +1,96 @@
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { useState } from "react";
-import { toast } from "sonner";
 
-import { designs, type InvitationDesign } from "@/data/festa";
+import { designs } from "@/data/festa";
+import { cn } from "@/lib/utils";
 
-import { DemoModal } from "./DemoModal";
 import { PhoneFrame } from "./PhoneFrame";
-import { FestaButton, Reveal, Section, SectionHeading } from "./primitives";
+import { Reveal, Section, SectionHeading } from "./primitives";
 
+/**
+ * Single live showcase: one phone frame with a round pill selector.
+ * Only the active demo is mounted, so the page loads one site at a time.
+ */
 export function Catalogue() {
-  const [active, setActive] = useState<InvitationDesign | null>(null);
+  const [activeId, setActiveId] = useState(designs[0]!.id);
+  const active = designs.find((d) => d.id === activeId) ?? designs[0]!;
 
   return (
     <Section id="designs" className="bg-ivory">
       <Reveal>
         <SectionHeading
-          eyebrow="კატალოგი"
-          title="აღმოაჩინეთ Festa-ს დიზაინები"
-          subtitle="აირჩიეთ სტილი, რომელიც ყველაზე უკეთ ასახავს თქვენს სიყვარულის ისტორიას."
+          eyebrow="ცოცხალი დემოები"
+          title="გამოსცადეთ მოსაწვევები რეალურად"
+          subtitle="აირჩიეთ წყვილი და პირდაპირ ტელეფონის ეკრანზე ჩამოსქროლეთ ნამდვილი მოსაწვევი."
         />
       </Reveal>
 
-      <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-        {designs.map((design, i) => (
-          <Reveal key={design.id} delay={i * 0.06}>
-            <DesignCard
-              design={design}
-              onPreview={() => setActive(design)}
-              onSelect={() =>
-                toast("მალე დაემატება", {
-                  description: `„${design.name}“-ის ონლაინ შეკვეთა მალე გაიხსნება.`,
-                })
-              }
+      <div className="mt-14 grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+        <Reveal className="order-2 lg:order-1">
+          <div className="flex flex-wrap justify-center gap-2.5 lg:justify-start">
+            {designs.map((design) => {
+              const isActive = design.id === active.id;
+              return (
+                <button
+                  key={design.id}
+                  type="button"
+                  onClick={() => setActiveId(design.id)}
+                  className={cn(
+                    "relative rounded-full border px-5 py-2.5 text-[0.8125rem] transition-all duration-300",
+                    isActive
+                      ? "border-transparent bg-burgundy text-ivory shadow-card"
+                      : "border-border bg-card text-burgundy hover:border-gold/60 hover:bg-ivory-deep"
+                  )}
+                >
+                  {design.name}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-9 rounded-3xl border border-border/70 bg-card p-7 shadow-card">
+            <span className="inline-flex rounded-full bg-blush/45 px-4 py-1.5 text-[0.6875rem] tracking-[0.16em] text-burgundy-deep uppercase">
+              {active.category}
+            </span>
+            <h3 className="mt-5 text-2xl text-burgundy-deep">{active.name}</h3>
+            <p className="mt-3 text-[0.9rem] leading-relaxed text-muted-foreground">
+              ეს არის სრულად მოქმედი მოსაწვევი — ჩამოსქროლეთ ჩარჩოში ან გახსენით
+              სრულ ეკრანზე.
+            </p>
+            <a
+              href={active.demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-burgundy/25 px-6 py-2.5 text-[0.8125rem] text-burgundy transition-all duration-300 hover:border-burgundy hover:bg-burgundy/5"
+            >
+              სრულ ეკრანზე გახსნა
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </Reveal>
+
+        <div className="order-1 flex justify-center lg:order-2">
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
+            className="relative"
+          >
+            <div
+              className="absolute -inset-8 rounded-[4rem] bg-gold/12 blur-3xl"
+              aria-hidden="true"
             />
-          </Reveal>
-        ))}
-      </div>
-
-      <DemoModal design={active} onClose={() => setActive(null)} />
-    </Section>
-  );
-}
-
-function DesignCard({
-  design,
-  onPreview,
-  onSelect,
-}: {
-  design: InvitationDesign;
-  onPreview: () => void;
-  onSelect: () => void;
-}) {
-  return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-sm border border-border/70 bg-card shadow-card transition-all duration-500 hover:-translate-y-1 hover:border-gold/45 hover:shadow-lift">
-      <div className="relative px-8 pt-10 pb-2">
-        <PhoneFrame title={design.name} poster={design.image} />
-        <span className="absolute top-5 left-5 rounded-full bg-ivory/92 px-3 py-1 text-[0.625rem] tracking-[0.16em] text-burgundy uppercase backdrop-blur-sm">
-          {design.category}
-        </span>
-      </div>
-
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-xl text-burgundy-deep">{design.name}</h3>
-        <p className="mt-3 flex-1 text-[0.875rem] leading-relaxed text-muted-foreground">
-          {design.description}
-        </p>
-        <div className="mt-6 flex flex-col gap-2.5">
-          <FestaButton onClick={onPreview} variant="outline" className="w-full">
-            დემოს ნახვა
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </FestaButton>
-          <FestaButton onClick={onSelect} className="w-full">
-            ამ დიზაინის არჩევა
-          </FestaButton>
+            <PhoneFrame
+              title={active.name}
+              poster=""
+              demoUrl={active.demoUrl}
+              className="max-w-[19rem]"
+            />
+          </motion.div>
         </div>
       </div>
-    </article>
+    </Section>
   );
 }

@@ -107,7 +107,7 @@ type ButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-[0.8125rem] font-medium tracking-[0.08em] uppercase transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-[0.8125rem] font-medium tracking-[0.06em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60";
 
 const variants = {
   solid: "bg-burgundy text-ivory hover:bg-burgundy-deep shadow-card hover:shadow-lift",
