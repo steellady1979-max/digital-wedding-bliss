@@ -19,11 +19,7 @@ export function Catalogue() {
   return (
     <Section id="designs" className="bg-ivory">
       <Reveal>
-        <SectionHeading
-          eyebrow="ცოცხალი დემოები"
-          title="გამოსცადეთ მოსაწვევები რეალურად"
-          subtitle="აირჩიეთ წყვილი და პირდაპირ ტელეფონის ეკრანზე ჩამოსქროლეთ ნამდვილი მოსაწვევი."
-        />
+        <SectionHeading eyebrow="ცოცხალი დემოები" title="აირჩიეთ და გამოცადეთ" />
       </Reveal>
 
       <div className="mt-14 grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
@@ -40,7 +36,7 @@ export function Catalogue() {
                     "relative rounded-full border px-5 py-2.5 text-[0.8125rem] transition-all duration-300",
                     isActive
                       ? "border-transparent bg-burgundy text-ivory shadow-card"
-                      : "border-border bg-card text-burgundy hover:border-gold/60 hover:bg-ivory-deep"
+                      : "border-border bg-card text-burgundy hover:border-gold/60 hover:bg-ivory-deep",
                   )}
                 >
                   {design.name}
@@ -54,10 +50,6 @@ export function Catalogue() {
               {active.category}
             </span>
             <h3 className="mt-5 text-2xl text-burgundy-deep">{active.name}</h3>
-            <p className="mt-3 text-[0.9rem] leading-relaxed text-muted-foreground">
-              ეს არის სრულად მოქმედი მოსაწვევი — ჩამოსქროლეთ ჩარჩოში ან გახსენით
-              სრულ ეკრანზე.
-            </p>
             <a
               href={active.demoUrl}
               target="_blank"

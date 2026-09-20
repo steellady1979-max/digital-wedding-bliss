@@ -9,20 +9,17 @@ type PhoneFrameProps = {
   demoUrl?: string | undefined;
   /** Optional extra classes for the outer frame (e.g. larger width). */
   className?: string | undefined;
+  /** Load immediately when the frame is visible above the fold. */
+  eager?: boolean;
 };
 
 /** Shared soft phone frame (9:19.5) used for the live demo showcase. */
-export function PhoneFrame({
-  title,
-  poster,
-  demoUrl,
-  className,
-}: PhoneFrameProps) {
+export function PhoneFrame({ title, poster, demoUrl, className, eager = false }: PhoneFrameProps) {
   return (
     <div
       className={cn(
         "relative mx-auto aspect-[9/19.5] w-full max-w-64 rounded-[2.75rem] border border-ink/70 bg-ink p-2 shadow-lift",
-        className
+        className,
       )}
     >
       <span
@@ -34,24 +31,17 @@ export function PhoneFrame({
           <iframe
             src={demoUrl}
             title={title}
-            loading="lazy"
+            loading={eager ? "eager" : "lazy"}
             className="h-full w-full border-0 bg-white"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
             allow="fullscreen"
           />
         ) : poster ? (
-          <img
-            src={poster}
-            alt={title}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
+          <img src={poster} alt={title} loading="lazy" className="h-full w-full object-cover" />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center px-6 text-center">
             <span className="eyebrow text-burgundy-soft">დემო</span>
-            <span className="mt-2 text-sm leading-snug text-muted-foreground">
-              {title}
-            </span>
+            <span className="mt-2 text-sm leading-snug text-muted-foreground">{title}</span>
           </div>
         )}
       </div>

@@ -1,7 +1,7 @@
 /**
  * Festa.ge content + demo data.
  *
- * DESIGN PHASE ONLY: invitation demos, testimonials and FAQ answers below are
+ * DESIGN PHASE ONLY: invitation demos and FAQ answers below are
  * temporary placeholders. Swap in the final imagery/copy before launch — no
  * other file needs to change.
  */
@@ -83,15 +83,15 @@ export const navLinks = [
 export const steps = [
   {
     title: "აირჩიეთ დიზაინი",
-    text: "შეარჩიეთ თქვენთვის სასურველი მზა ან ინდივიდუალური დიზაინი.",
+    text: "შეარჩიეთ სასურველი სტილი.",
   },
   {
     title: "გამოგვიგზავნეთ დეტალები",
-    text: "მოგვაწოდეთ წყვილის სახელები, თარიღი, ლოკაცია, ფოტოები და ღონისძიების განრიგი.",
+    text: "გამოგვიგზავნეთ ტექსტი, ფოტოები და თარიღი.",
   },
   {
     title: "მიიღეთ თქვენი ვებსაიტი",
-    text: "მიიღებთ გასაზიარებლად მზად მყოფი პერსონალური ბმული.",
+    text: "მიიღეთ გასაზიარებლად მზად პირადი ბმული.",
   },
 ];
 
@@ -121,28 +121,6 @@ export const features: { title: string; text: string; soon?: boolean }[] = [
     title: "ქართული და ინგლისური ვერსია",
     text: "ორენოვანი მოსაწვევი უცხოეთიდან ჩამოსული სტუმრებისთვისაც.",
     soon: true,
-  },
-];
-
-/** DEMO CONTENT — replace with real client reviews before launch. */
-export const testimonials = [
-  {
-    name: "ანა & გიორგი",
-    location: "თბილისი",
-    quote:
-      "მოსაწვევი ისეთი დახვეწილი გამოვიდა, რომ სტუმრები დღემდე გვიხსენებენ. ყველა დეტალი ერთ ბმულში იყო.",
-  },
-  {
-    name: "ნინო & ლევანი",
-    location: "ქვარელი",
-    quote:
-      "ძალიან სწრაფად და გემოვნებით შესრულდა. ბებია-ბაბუამაც მარტივად გახსნა ტელეფონში.",
-  },
-  {
-    name: "მარიამ & საბა",
-    location: "ბათუმი",
-    quote:
-      "დიზაინი ზუსტად ჩვენს განწყობას ასახავდა — მშვიდი, ელეგანტური და ძალიან ჩვენი.",
   },
 ];
 

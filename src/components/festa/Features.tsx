@@ -6,11 +6,7 @@ export function Features() {
   return (
     <Section id="about" className="bg-ivory">
       <Reveal>
-        <SectionHeading
-          eyebrow="ჩვენ შესახებ"
-          title="ყველაფერი, რაც დახვეწილ მოსაწვევს სჭირდება"
-          subtitle="Festa.ge ქმნის ციფრულ საქორწილო მოსაწვევებს, რომლებიც ლუქსუსური საქორწილო სტაციონარის სილამაზეს მობილურ ეკრანზე გადმოიტანს."
-        />
+        <SectionHeading eyebrow="ჩვენ შესახებ" title="ყველაფერი ერთ ბმულში" />
       </Reveal>
 
       <div className="mt-14 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
@@ -22,9 +18,7 @@ export function Features() {
                 {/* Advanced functionality is design-only in this phase. */}
                 {f.soon ? <SoonBadge /> : null}
               </div>
-              <p className="mt-3 text-[0.875rem] leading-relaxed text-muted-foreground">
-                {f.text}
-              </p>
+              <p className="mt-3 text-[0.875rem] leading-relaxed text-muted-foreground">{f.text}</p>
             </div>
           </Reveal>
         ))}
