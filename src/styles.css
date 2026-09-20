@@ -38,8 +38,7 @@
 
 /*
  * Festa.ge design system.
- * Brand: burgundy dominant, ivory spacious backgrounds, gold as delicate accent.
- * All colors in oklch.
+ * Brand: crisp white surfaces, warm neutral sections and one burgundy accent.
  */
 
 @theme inline {
@@ -83,27 +82,27 @@
   --color-ink: var(--ink);
 
   --shadow-card:
-    0 1px 2px oklch(0.2578 0.0177 0.29 / 4%), 0 18px 40px -24px oklch(0.3713 0.116 6.49 / 22%);
+    0 1px 2px rgb(50 34 34 / 5%), 0 18px 45px -26px rgb(100 27 32 / 22%);
   --shadow-lift:
-    0 2px 4px oklch(0.2578 0.0177 0.29 / 5%), 0 34px 60px -28px oklch(0.3713 0.116 6.49 / 32%);
+    0 6px 18px rgb(50 34 34 / 8%), 0 32px 70px -30px rgb(100 27 32 / 30%);
 }
 
 :root {
   --radius: 1rem;
 
-  /* Warm, contemporary neutrals: soft charcoal + sand + champagne. */
+  /* Accessible brand palette: one accent, high-contrast copy, quiet surfaces. */
   --burgundy: #aa2e36;
-  --burgundy-deep: #641b20;
+  --burgundy-deep: #691b22;
   --burgundy-soft: #aa2e36;
-  --ivory: oklch(0.9812 0.0045 84);
-  --ivory-deep: oklch(0.9503 0.0085 82);
-  --blush: oklch(0.9 0.0206 76);
-  --gold: oklch(0.7829 0.0616 79.5);
-  --ink: oklch(0.2451 0.0083 67.56);
+  --ivory: #fffdfb;
+  --ivory-deep: #f7f3f0;
+  --blush: #f2e3e0;
+  --gold: #c7a66f;
+  --ink: #2d2525;
 
   --background: var(--ivory);
   --foreground: var(--ink);
-  --card: oklch(1 0 0);
+  --card: #ffffff;
   --card-foreground: var(--ink);
   --popover: var(--ivory);
   --popover-foreground: var(--ink);
@@ -112,13 +111,13 @@
   --secondary: var(--ivory-deep);
   --secondary-foreground: var(--burgundy);
   --muted: var(--ivory-deep);
-  --muted-foreground: oklch(0.48 0.015 5);
+  --muted-foreground: #6f6262;
   --accent: var(--blush);
   --accent-foreground: var(--burgundy-deep);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.885 0.012 60);
-  --input: oklch(0.885 0.012 60);
+  --border: #e8ded9;
+  --input: #ded1cb;
   --ring: var(--burgundy);
 }
 

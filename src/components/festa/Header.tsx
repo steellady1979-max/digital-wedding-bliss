@@ -31,8 +31,8 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-border/70 bg-ivory/95 backdrop-blur-md"
-          : "border-b border-transparent bg-ivory/60 backdrop-blur-sm",
+          ? "border-b border-border bg-white/95 shadow-[0_8px_30px_-24px_rgba(45,37,37,.35)] backdrop-blur-md"
+          : "border-b border-border/70 bg-white/95 backdrop-blur-md",
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8 lg:py-4">
@@ -72,7 +72,7 @@ export function Header() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "overflow-hidden border-t border-border/60 bg-ivory transition-[max-height,opacity] duration-400 lg:hidden",
+          "overflow-hidden border-t border-border bg-white transition-[max-height,opacity] duration-400 lg:hidden",
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
         )}
       >

@@ -9,10 +9,10 @@ export function Features() {
         <SectionHeading eyebrow="ჩვენ შესახებ" title="ყველაფერი ერთ ბმულში" />
       </Reveal>
 
-      <div className="mt-14 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((f, i) => (
           <Reveal key={f.title} delay={i * 0.05}>
-            <div className="border-t border-border/80 pt-6">
+            <div className="h-full rounded-3xl border border-border bg-white p-6 shadow-card">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="min-w-0 text-[1.0625rem] text-burgundy-deep">{f.title}</h3>
                 {/* Advanced functionality is design-only in this phase. */}

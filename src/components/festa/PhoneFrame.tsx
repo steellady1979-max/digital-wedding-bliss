@@ -13,20 +13,20 @@ type PhoneFrameProps = {
   eager?: boolean;
 };
 
-/** Shared soft phone frame (9:19.5) used for the live demo showcase. */
+/** Shared white phone frame (9:19.5) used for the live demo showcase. */
 export function PhoneFrame({ title, poster, demoUrl, className, eager = false }: PhoneFrameProps) {
   return (
     <div
       className={cn(
-        "relative mx-auto aspect-[9/19.5] w-full max-w-64 rounded-[2.75rem] border border-ink/70 bg-ink p-2 shadow-lift",
+        "relative mx-auto aspect-[9/19.5] w-full max-w-64 rounded-[2.75rem] border border-border bg-white p-2.5 shadow-lift",
         className,
       )}
     >
       <span
-        className="absolute top-3.5 left-1/2 z-10 h-1.5 w-14 -translate-x-1/2 rounded-full bg-ivory/25"
+        className="absolute top-4 left-1/2 z-10 h-1.5 w-14 -translate-x-1/2 rounded-full bg-burgundy/20"
         aria-hidden="true"
       />
-      <div className="relative h-full w-full overflow-hidden rounded-[2.25rem] bg-ivory-deep">
+      <div className="relative h-full w-full overflow-hidden rounded-[2.15rem] bg-ivory-deep">
         {demoUrl ? (
           <iframe
             src={demoUrl}

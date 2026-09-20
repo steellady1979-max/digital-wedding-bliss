@@ -38,7 +38,9 @@ export function Hero() {
             ლამაზი, პირადი და მარტივად გასაზიარებელი.
           </motion.p>
           <motion.div className="mt-9 flex flex-wrap gap-3" {...rise(0.3)}>
-            <FestaLinkButton href="#designs">აირჩიე დიზაინი</FestaLinkButton>
+            <FestaLinkButton href="#designs" variant="light">
+              აირჩიე დიზაინი
+            </FestaLinkButton>
             <FestaLinkButton href="#designs" variant="ghostLight">
               ნახე დემო
             </FestaLinkButton>
@@ -65,7 +67,7 @@ export function Hero() {
               poster=""
               demoUrl="https://giga-nini.vercel.app"
               eager
-              className="max-w-[19rem] border-ivory/35"
+              className="max-w-[19rem]"
             />
           </div>
         </motion.div>

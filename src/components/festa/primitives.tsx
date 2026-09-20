@@ -102,7 +102,7 @@ export function SectionHeading({
 
 type ButtonProps = {
   children: ReactNode;
-  variant?: "solid" | "outline" | "ghostLight" | "gold";
+  variant?: "solid" | "light" | "outline" | "ghostLight" | "gold";
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -111,8 +111,10 @@ const base =
 
 const variants = {
   solid: "bg-burgundy text-ivory hover:bg-burgundy-deep shadow-card hover:shadow-lift",
-  outline: "border border-burgundy/30 text-burgundy hover:border-burgundy hover:bg-burgundy/5",
-  ghostLight: "border border-ivory/35 text-ivory hover:bg-ivory/10",
+  light: "bg-white text-burgundy shadow-card hover:bg-ivory-deep hover:shadow-lift",
+  outline:
+    "border border-burgundy/35 bg-white text-burgundy hover:border-burgundy hover:bg-burgundy/5",
+  ghostLight: "border border-white/55 text-white hover:border-white hover:bg-white/10",
   gold: "bg-gold/95 text-burgundy-deep hover:bg-gold",
 } as const;
 
