@@ -6,92 +6,70 @@
  * other file needs to change.
  */
 
-import burgundyImg from "@/assets/design-burgundy.jpg";
-import botanicalImg from "@/assets/design-botanical.jpg";
-import minimalImg from "@/assets/design-minimal.jpg";
-import midnightImg from "@/assets/design-midnight.jpg";
-
 export type InvitationDesign = {
   id: string;
+  /** Couple names shown on the selector pill. */
   name: string;
+  /** Short style label. */
   category: string;
-  description: string;
-  image: string;
-  alt: string;
-  /** Live invitation URL loaded inside the demo modal. */
-  demoUrl: string | null;
+  /** Live invitation URL loaded inside the phone frame. */
+  demoUrl: string;
 };
 
 export const designs: InvitationDesign[] = [
   {
-    id: "burgundy-romance",
-    name: "Burgundy Romance",
+    id: "giga-nini",
+    name: "გიგა & ნინი",
     category: "კლასიკური",
-    description:
-      "მუქი ბორდო და ოქროს დეტალები — თბილი, რომანტიკული განწყობა საღამოს ზეიმისთვის.",
-    image: burgundyImg,
-    alt: "ბორდო ფერის საქორწილო მოსაწვევი ოქროსფერი ბოტანიკური ჩარჩოთი",
     demoUrl: "https://giga-nini.vercel.app",
   },
   {
-    id: "timeless-ivory",
-    name: "Timeless Ivory",
+    id: "nini-mate",
+    name: "ნინი & მათე",
     category: "დროისმიღმა",
-    description:
-      "სპილოსძვლის ქაღალდი და შამპანურის ფერის აქცენტები დახვეწილი სიმსუბუქისთვის.",
-    image: "",
-    alt: "სპილოსძვლის ფერის საქორწილო მოსაწვევების ნაკრები აბრეშუმის ლენტით",
     demoUrl: "https://nini-mate.vercel.app",
   },
   {
-    id: "botanical-love",
-    name: "Botanical Love",
+    id: "lisa-giorgi",
+    name: "ლიზა & გიორგი",
     category: "ფლორალური",
-    description:
-      "აკვარელის ყვავილები და მწვანე ტოტები — ნაზი და ბუნებრივი დღის ზეიმისთვის.",
-    image: botanicalImg,
-    alt: "ბოტანიკური საქორწილო მოსაწვევი აკვარელის ყვავილებითა და ევკალიპტით",
     demoUrl: "https://lisa-giorgi.vercel.app",
   },
   {
-    id: "modern-minimal",
-    name: "Modern Minimal",
+    id: "mariami-ioseb",
+    name: "მარიამი & იოსები",
     category: "მინიმალური",
-    description:
-      "სუფთა ტიპოგრაფია და ბევრი თეთრი სივრცე — თანამედროვე, რედაქციული ხასიათი.",
-    image: minimalImg,
-    alt: "მინიმალისტური თეთრი საქორწილო მოსაწვევი წვრილი ოქროს ჩარჩოთი",
     demoUrl: "https://mariami-ioseb.vercel.app",
   },
   {
-    id: "midnight-elegance",
-    name: "Midnight Elegance",
+    id: "mariami-aleksandre",
+    name: "მარიამი & ალექსანდრე",
     category: "საღამოს",
-    description:
-      "მუქი ღამის ტონები და ოქროს ციალი — ლუქსუსური საღამოს ღონისძიებისთვის.",
-    image: midnightImg,
-    alt: "მუქი ღამის ფერის საქორწილო მოსაწვევი ოქროსფერი დეტალებით სანთლის შუქზე",
     demoUrl: "https://mariami-aleksandre.vercel.app",
   },
   {
     id: "ana-cotne",
     name: "ანა & ცოტნე",
-    category: "რეალური დემო",
-    description:
-      "ცოცხალი საქორწილო მოსაწვევის დემო — შეგიძლია პირდაპირ გამოსცადო და ჩამოსქროლო.",
-    image: "",
-    alt: "ანას და ცოტნეს ციფრული მოსაწვევის დემო",
+    category: "ელეგანტური",
     demoUrl: "https://ana-cotne.vercel.app/",
   },
   {
     id: "nini-aleko",
     name: "ნინი & ალეკო",
-    category: "რეალური დემო",
-    description:
-      "ცოცხალი საქორწილო მოსაწვევის დემო — შეგიძლია პირდაპირ გამოსცადო და ჩამოსქროლო.",
-    image: "",
-    alt: "ნინის და ალეკოს ციფრული მოსაწვევის დემო",
+    category: "თანამედროვე",
     demoUrl: "https://nini-aleko.vercel.app",
+  },
+  {
+    id: "magda-beqa",
+    name: "მაგდა & ბექა",
+    category: "რომანტიკული",
+    demoUrl: "https://magda-beqa.vercel.app",
+  },
+  {
+    id: "levani-tamta",
+    name: "ლევანი & თამთა",
+    category: "ბუნებრივი",
+    demoUrl: "https://levani-tamta.vercel.app",
   },
 ];
 
