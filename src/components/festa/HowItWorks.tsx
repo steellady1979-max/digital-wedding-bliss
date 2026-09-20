@@ -18,12 +18,12 @@ export function HowItWorks() {
           const Icon = icons[i % icons.length]!;
           return (
             <Reveal key={step.title} delay={i * 0.1}>
-              <li className="relative">
+              <li className="relative h-full rounded-3xl border border-border bg-white p-6 shadow-card">
                 <div className="flex items-center gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/60 text-burgundy">
                     <Icon className="h-5 w-5" strokeWidth={1.25} />
                   </span>
-                  <span className="font-serif text-[2rem] leading-none text-burgundy/22">
+                  <span className="font-serif text-[2rem] leading-none text-burgundy/35">
                     0{i + 1}
                   </span>
                 </div>

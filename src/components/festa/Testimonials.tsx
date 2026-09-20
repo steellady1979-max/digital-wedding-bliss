@@ -34,13 +34,13 @@ export function Testimonials() {
         {testimonials.map((video, i) => (
           <Reveal key={video.id} delay={i * 0.08}>
             <article className="mx-auto w-full max-w-[18rem]">
-              <div className="aspect-[9/16] overflow-hidden rounded-[2rem] border border-burgundy/15 bg-ink shadow-card">
+              <div className="aspect-[9/16] rounded-[2rem] border border-border bg-white p-1.5 shadow-card">
                 <iframe
                   src={`https://www.tiktok.com/player/v1/${video.id}?controls=1&description=0&music_info=0&loop=1`}
                   title={`TikTok ვიდეო შეფასება — ${video.author}`}
                   loading="lazy"
                   allow="encrypted-media; picture-in-picture; fullscreen"
-                  className="h-full w-full border-0"
+                  className="h-full w-full rounded-[1.6rem] border-0 bg-ink"
                 />
               </div>
               <a

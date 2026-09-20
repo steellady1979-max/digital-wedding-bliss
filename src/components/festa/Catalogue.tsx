@@ -71,7 +71,7 @@ export function Catalogue() {
             className="relative"
           >
             <div
-              className="absolute -inset-8 rounded-[4rem] bg-gold/12 blur-3xl"
+              className="absolute -inset-8 rounded-[4rem] bg-burgundy/10 blur-3xl"
               aria-hidden="true"
             />
             <PhoneFrame
