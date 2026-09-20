@@ -1,28 +1,36 @@
-import { Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
-import { toast } from "sonner";
+import { Instagram, Mail, Music2 } from "lucide-react";
 
 import { navLinks } from "@/data/festa";
 
 import { Wordmark } from "./Wordmark";
 
-/** Social + email links are placeholders in this phase. */
 const socials = [
-  { label: "Instagram", Icon: Instagram },
-  { label: "Facebook", Icon: Facebook },
-  { label: "WhatsApp", Icon: MessageCircle },
-  { label: "Email", Icon: Mail },
+  {
+    label: "TikTok",
+    Icon: Music2,
+    href: "https://www.tiktok.com/@festainvitations",
+  },
+  {
+    label: "Instagram",
+    Icon: Instagram,
+    href: "https://www.instagram.com/festainvitations/",
+  },
+  {
+    label: "Email",
+    Icon: Mail,
+    href: "mailto:festainvitations@gmail.com",
+  },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-burgundy-deep px-5 pt-16 pb-8 sm:px-8">
+    <footer className="bg-[#aa2e36] px-5 pt-16 pb-8 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Wordmark tone="light" />
             <p className="mt-4 max-w-xs text-[0.875rem] leading-relaxed text-ivory/60">
-              ციფრული საქორწილო მოსაწვევები, რომლებიც ლუქსუსური სტაციონარის სილამაზეს
-              თქვენს სტუმრების ტელეფონში გადმოიტანს.
+              თქვენი ისტორია — ციფრულ მოსაწვევში.
             </p>
           </div>
 
@@ -45,23 +53,25 @@ export function Footer() {
           <div>
             <h2 className="eyebrow text-gold">კონტაქტი</h2>
             <div className="mt-5 flex gap-3">
-              {socials.map(({ label, Icon }) => (
-                <button
+              {socials.map(({ label, Icon, href }) => (
+                <a
                   key={label}
-                  type="button"
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
                   aria-label={label}
-                  onClick={() =>
-                    toast("მალე დაემატება", {
-                      description: `${label} მალე გააქტიურდება.`,
-                    })
-                  }
                   className="grid h-10 w-10 place-items-center rounded-full border border-ivory/20 text-ivory/75 transition-colors hover:border-gold/60 hover:text-gold"
                 >
                   <Icon className="h-4 w-4" strokeWidth={1.5} />
-                </button>
+                </a>
               ))}
             </div>
-            <p className="mt-5 text-[0.8125rem] text-ivory/50">hello@festa.ge</p>
+            <a
+              href="mailto:festainvitations@gmail.com"
+              className="mt-5 inline-block text-[0.8125rem] text-ivory/70 transition-colors hover:text-ivory"
+            >
+              festainvitations@gmail.com
+            </a>
           </div>
         </div>
 
