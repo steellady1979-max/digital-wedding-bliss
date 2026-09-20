@@ -78,6 +78,7 @@ export function Catalogue() {
               title={active.name}
               poster=""
               demoUrl={active.demoUrl}
+              eager
               className="max-w-[19rem]"
             />
           </motion.div>
