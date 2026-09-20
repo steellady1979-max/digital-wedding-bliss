@@ -62,7 +62,7 @@ export function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "მენიუს დახურვა" : "მენიუს გახსნა"}
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-sm border border-burgundy/20 text-burgundy transition-colors hover:bg-burgundy/5 lg:hidden"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-burgundy/20 text-burgundy transition-colors hover:bg-burgundy/5 lg:hidden"
           >
             {open ? <X className="h-4.5 w-4.5" /> : <Menu className="h-4.5 w-4.5" />}
           </button>
@@ -105,7 +105,7 @@ function LangToggle({
 }) {
   return (
     <div
-      className="flex shrink-0 items-center rounded-sm border border-burgundy/15 text-[0.6875rem] tracking-[0.12em] uppercase"
+      className="flex shrink-0 items-center overflow-hidden rounded-full border border-burgundy/15 text-[0.6875rem] tracking-[0.12em] uppercase"
       role="group"
       aria-label="ენის არჩევა"
     >

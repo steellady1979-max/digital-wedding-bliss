@@ -55,7 +55,7 @@ export function Footer() {
                       description: `${label} მალე გააქტიურდება.`,
                     })
                   }
-                  className="grid h-10 w-10 place-items-center rounded-sm border border-ivory/20 text-ivory/75 transition-colors hover:border-gold/60 hover:text-gold"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-ivory/20 text-ivory/75 transition-colors hover:border-gold/60 hover:text-gold"
                 >
                   <Icon className="h-4 w-4" strokeWidth={1.5} />
                 </button>
