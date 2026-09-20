@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from "motion/react";
 
-import heroImg from "@/assets/hero.jpg";
 import { PhoneFrame } from "./PhoneFrame";
 import { FestaLinkButton } from "./primitives";
+import { Wordmark } from "./Wordmark";
 
 export function Hero() {
   const reduced = useReducedMotion();
@@ -16,22 +16,12 @@ export function Hero() {
         };
 
   return (
-    <section id="top" className="relative isolate overflow-hidden">
-      <img
-        src={heroImg}
-        alt="წყვილი ხელიხელჩაკიდებული საქორწილო ცერემონიაზე, ბორდოსფერი ყვავილების ფონზე"
-        width={1600}
-        height={1104}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-burgundy-deep/72" aria-hidden="true" />
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/85 via-burgundy/45 to-burgundy-deep/55"
-        aria-hidden="true"
-      />
-
+    <section id="top" className="relative isolate overflow-hidden bg-[#aa2e36]">
       <div className="relative mx-auto grid max-w-6xl gap-14 px-5 pt-32 pb-20 sm:px-8 sm:pt-40 sm:pb-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10 lg:pt-48 lg:pb-32">
         <div className="max-w-xl">
+          <motion.div className="mb-9" {...rise(0)}>
+            <Wordmark tone="light" size="hero" />
+          </motion.div>
           <motion.p className="eyebrow text-gold" {...rise(0)}>
             ციფრული საქორწილო მოსაწვევები
           </motion.p>

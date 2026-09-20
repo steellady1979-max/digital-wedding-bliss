@@ -1,8 +1,27 @@
-import { Play } from "lucide-react";
-
 import { Reveal, Section, SectionHeading } from "./primitives";
 
-const videoSlots = ["ვიდეო 01", "ვიდეო 02", "ვიდეო 03"];
+const testimonials = [
+  {
+    id: "7680906052308864277",
+    author: "@ntiktokera",
+    url: "https://www.tiktok.com/@ntiktokera/video/7680906052308864277",
+  },
+  {
+    id: "7679399155860573458",
+    author: "@oragvelidzemakuna",
+    url: "https://www.tiktok.com/@oragvelidzemakuna/video/7679399155860573458",
+  },
+  {
+    id: "7679404550981176583",
+    author: "@teklakakaurrridze",
+    url: "https://www.tiktok.com/@teklakakaurrridze/video/7679404550981176583",
+  },
+  {
+    id: "7672424380390984981",
+    author: "@lisssssaedsch",
+    url: "https://www.tiktok.com/@lisssssaedsch/video/7672424380390984981",
+  },
+];
 
 export function Testimonials() {
   return (
@@ -11,19 +30,28 @@ export function Testimonials() {
         <SectionHeading eyebrow="ვიდეო შეფასებები" title="რას ამბობენ ჩვენზე" />
       </Reveal>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        {videoSlots.map((label, i) => (
-          <Reveal key={label} delay={i * 0.08}>
-            <div className="group relative mx-auto aspect-[9/16] w-full max-w-[17rem] overflow-hidden rounded-[2rem] border border-burgundy/15 bg-gradient-to-br from-[#f5e7df] via-[#efe1d5] to-[#d8b8ac] shadow-card">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.7),transparent_38%)]" />
-              <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
-                <span className="grid h-14 w-14 place-items-center rounded-full bg-burgundy text-ivory shadow-lift transition-transform group-hover:scale-105">
-                  <Play className="ml-0.5 h-5 w-5 fill-current" />
-                </span>
-                <span className="mt-5 text-sm font-medium text-burgundy-deep">{label}</span>
-                <span className="mt-1 text-xs text-burgundy/65">ვიდეოს ადგილი</span>
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        {testimonials.map((video, i) => (
+          <Reveal key={video.id} delay={i * 0.08}>
+            <article className="mx-auto w-full max-w-[18rem]">
+              <div className="aspect-[9/16] overflow-hidden rounded-[2rem] border border-burgundy/15 bg-ink shadow-card">
+                <iframe
+                  src={`https://www.tiktok.com/player/v1/${video.id}?controls=1&description=0&music_info=0&loop=1`}
+                  title={`TikTok ვიდეო შეფასება — ${video.author}`}
+                  loading="lazy"
+                  allow="encrypted-media; picture-in-picture; fullscreen"
+                  className="h-full w-full border-0"
+                />
               </div>
-            </div>
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 block text-center text-sm text-burgundy transition-colors hover:text-burgundy-deep"
+              >
+                {video.author}
+              </a>
+            </article>
           </Reveal>
         ))}
       </div>
