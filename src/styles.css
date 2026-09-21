@@ -11,6 +11,14 @@
 }
 
 @font-face {
+  font-family: "DM Galaktioni";
+  src: url("/fonts/DM-Galaktioni.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "FiraGO";
   src: url("/fonts/FiraGO-Medium.woff2") format("woff2");
   font-style: normal;
@@ -49,6 +57,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
 
+  --font-display: "DM Galaktioni", "FiraGO", system-ui, sans-serif;
   --font-serif: "FiraGO", system-ui, sans-serif;
   --font-sans: "FiraGO", system-ui, sans-serif;
 
@@ -143,9 +152,9 @@
   h3,
   h4,
   blockquote {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0;
   }
 }
 
