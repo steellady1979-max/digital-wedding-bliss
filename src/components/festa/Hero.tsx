@@ -29,23 +29,20 @@ export function Hero() {
       />
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-5 pt-32 pb-20 text-center sm:px-8 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32">
         <div className="mx-auto max-w-3xl">
-          <motion.p className="eyebrow text-burgundy" {...rise(0)}>
-            ვებსაიტის ფორმატის ციფრული საქორწილო მოსაწვევები
-          </motion.p>
           <motion.h1
-            className="mt-6 text-balance text-[2.65rem] leading-[1.12] text-burgundy-deep sm:text-[3.75rem] lg:text-[4.5rem]"
-            {...rise(0.1)}
+            className="text-balance text-[2.65rem] leading-[1.12] text-burgundy-deep sm:text-[3.75rem] lg:text-[4.5rem]"
+            {...rise(0)}
           >
             ოცნების ქორწილის, ოცნების მოსაწვევი
           </motion.h1>
           <motion.p
             className="mx-auto mt-6 max-w-2xl text-[1rem] leading-relaxed text-muted-foreground"
-            {...rise(0.2)}
+            {...rise(0.1)}
           >
-            პერსონალური ვებსაიტი თქვენი ქორწილისთვის — ლამაზი, პირადი და მარტივად
-            გასაზიარებელი.
+            ციფრული და ინტერაქტიული ქორწილის მოსაწვევი — პერსონალური ვებსაიტი,
+            ავტომატური RSVP და ყველა მნიშვნელოვანი დეტალი ერთ ბმულში.
           </motion.p>
-          <motion.div className="mt-9 flex flex-wrap justify-center gap-3" {...rise(0.3)}>
+          <motion.div className="mt-9 flex flex-wrap justify-center gap-3" {...rise(0.2)}>
             <FestaLinkButton href="#designs">
               აირჩიე დიზაინი
             </FestaLinkButton>
@@ -65,7 +62,7 @@ export function Hero() {
                 transition: { duration: 1, delay: 0.35, ease: [0.22, 0.61, 0.36, 1] as const },
               })}
         >
-          <div className="relative w-full max-w-[19rem]">
+          <div className="relative w-full max-w-[14.5rem] sm:max-w-[16.5rem] lg:max-w-[18rem]">
             <div
               className="absolute -inset-7 rounded-[4rem] bg-blush/70 blur-3xl"
               aria-hidden="true"
@@ -75,7 +72,6 @@ export function Hero() {
               poster=""
               demoUrl="https://giga-nini.vercel.app"
               eager
-              className="max-w-[19rem]"
             />
           </div>
         </motion.div>

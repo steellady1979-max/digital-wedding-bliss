@@ -1,6 +1,6 @@
 import { features } from "@/data/festa";
 
-import { Reveal, Section, SectionHeading, SoonBadge } from "./primitives";
+import { Reveal, Section, SectionHeading } from "./primitives";
 
 export function Features() {
   return (
@@ -15,8 +15,6 @@ export function Features() {
             <div className="h-full rounded-3xl border border-border bg-white p-6 shadow-card">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="min-w-0 text-[1.0625rem] text-burgundy-deep">{f.title}</h3>
-                {/* Advanced functionality is design-only in this phase. */}
-                {f.soon ? <SoonBadge /> : null}
               </div>
               <p className="mt-3 text-[0.875rem] leading-relaxed text-muted-foreground">{f.text}</p>
             </div>

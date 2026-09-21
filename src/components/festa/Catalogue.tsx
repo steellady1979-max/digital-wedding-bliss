@@ -13,7 +13,7 @@ import { Reveal, Section, SectionHeading } from "./primitives";
  * Only the active demo is mounted, so the page loads one site at a time.
  */
 export function Catalogue() {
-  const [activeId, setActiveId] = useState(designs[0]!.id);
+  const [activeId, setActiveId] = useState("mariami-ioseb");
   const active = designs.find((d) => d.id === activeId) ?? designs[0]!;
 
   return (
@@ -68,7 +68,7 @@ export function Catalogue() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
-            className="relative"
+            className="relative w-full max-w-[14rem] sm:max-w-[16rem] lg:max-w-[18rem]"
           >
             <div
               className="absolute -inset-8 rounded-[4rem] bg-burgundy/10 blur-3xl"
@@ -79,7 +79,6 @@ export function Catalogue() {
               poster=""
               demoUrl={active.demoUrl}
               eager
-              className="max-w-[19rem]"
             />
           </motion.div>
         </div>

@@ -119,7 +119,6 @@ export const features: { title: string; text: string; soon?: boolean }[] = [
   {
     title: "ქართული და ინგლისური ვერსია",
     text: "ორენოვანი მოსაწვევი უცხოეთიდან ჩამოსული სტუმრებისთვისაც.",
-    soon: true,
   },
 ];
 

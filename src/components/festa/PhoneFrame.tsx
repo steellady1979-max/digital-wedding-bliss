@@ -34,7 +34,7 @@ export function PhoneFrame({ title, poster, demoUrl, className, eager = false }:
             loading={eager ? "eager" : "lazy"}
             className="h-full w-full border-0 bg-white"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-            allow="fullscreen"
+            allow="autoplay 'none'; fullscreen"
           />
         ) : poster ? (
           <img src={poster} alt={title} loading="lazy" className="h-full w-full object-cover" />
