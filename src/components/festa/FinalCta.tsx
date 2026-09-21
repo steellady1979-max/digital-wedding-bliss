@@ -19,7 +19,7 @@ export function FinalCta() {
             შექმენით თქვენი მოსაწვევი
           </h2>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <FestaLinkButton href="mailto:festainvitations@gmail.com">მოგვწერეთ</FestaLinkButton>
+            <FestaLinkButton href="#order">შეუკვეთე მოსაწვევი</FestaLinkButton>
             <FestaLinkButton href="#designs" variant="outline">
               <Mail className="h-4 w-4" strokeWidth={1.5} />
               ნახეთ დიზაინები

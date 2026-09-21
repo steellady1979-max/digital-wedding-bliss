@@ -18,15 +18,15 @@ export function PhoneFrame({ title, poster, demoUrl, className, eager = false }:
   return (
     <div
       className={cn(
-        "relative mx-auto aspect-[9/19.5] w-full max-w-64 rounded-[2.75rem] border border-burgundy/10 bg-transparent p-2 shadow-[0_24px_60px_-38px_rgba(105,27,34,0.42)]",
+        "relative mx-auto aspect-[9/19.5] w-full max-w-64 rounded-[2.65rem] border border-burgundy/8 bg-transparent p-1 shadow-[0_20px_50px_-40px_rgba(105,27,34,0.35)]",
         className,
       )}
     >
       <span
-        className="absolute top-3.5 left-1/2 z-10 h-1.5 w-14 -translate-x-1/2 rounded-full bg-burgundy/15 backdrop-blur-sm"
+        className="absolute top-2.5 left-1/2 z-10 h-1 w-12 -translate-x-1/2 rounded-full bg-burgundy/12 backdrop-blur-sm"
         aria-hidden="true"
       />
-      <div className="relative h-full w-full overflow-hidden rounded-[2.2rem] border border-white/80 bg-ivory-deep">
+      <div className="relative h-full w-full overflow-hidden rounded-[2.35rem] bg-ivory-deep">
         {demoUrl ? (
           <iframe
             src={demoUrl}

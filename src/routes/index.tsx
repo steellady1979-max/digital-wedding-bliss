@@ -8,6 +8,7 @@ import { Footer } from "@/components/festa/Footer";
 import { Header } from "@/components/festa/Header";
 import { Hero } from "@/components/festa/Hero";
 import { HowItWorks } from "@/components/festa/HowItWorks";
+import { OrderForm } from "@/components/festa/OrderForm";
 import { Testimonials } from "@/components/festa/Testimonials";
 
 const title = "Festa.ge — დახვეწილი ციფრული საქორწილო მოსაწვევები";
@@ -40,6 +41,7 @@ function Index() {
         <Testimonials />
         <Faq />
         <FinalCta />
+        <OrderForm />
       </main>
       <Footer />
     </div>

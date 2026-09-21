@@ -54,7 +54,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <LangToggle lang={lang} onChange={setLang} />
-          <FestaLinkButton href="#cta" className="hidden px-5 py-2.5 sm:inline-flex">
+          <FestaLinkButton href="#order" className="hidden px-5 py-2.5 sm:inline-flex">
             შეუკვეთე მოსაწვევი
           </FestaLinkButton>
           <button
@@ -87,7 +87,7 @@ export function Header() {
               {l.label}
             </a>
           ))}
-          <FestaLinkButton href="#cta" onClick={() => setOpen(false)} className="my-5">
+          <FestaLinkButton href="#order" onClick={() => setOpen(false)} className="my-5">
             შეუკვეთე მოსაწვევი
           </FestaLinkButton>
         </nav>
